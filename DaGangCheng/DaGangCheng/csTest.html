@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+            <title>OpenCom JS-SDK Demo</title>
+            <script type="text/javascript" src="http://www.opencom.cn/jscommon/jopencom-1.0.0.js"></script>
+            <!--<script type="text/javascript" src="file:///android_asset/jopencom-1.0.0_.js"></script>-->
+    </head>
+    <body>
+        <a href="http://cs.opencom.cn/bbs/opencom/channel/15904">频道主页</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/post/371836/">查看话题</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/newpost">发帖</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/chat/164585/Waychel">私信Waychel</a>
+        <a href="http://cs.opencom.cn/bbs/ibuger_xwmh/chat/149165/国贸广场" class="contact">在线联系</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/chat/164585">私信@Null</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/about">关于应用</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/null">未支持链接</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/atme">@我页面</a>
+        <a href="http://cs.opencom.cn/bbs/opencom/friends">聊天页面</a>
+        
+        <a href="tel:13450257057">联系13450257...</a>
+        
+        <a href="http://cs.opencom.cn/pQYRc">SuperLink Inner</a>
+        
+        <button class="btn btn_primary" id="getLocation">getLocation</button>
+        <button class="btn btn_primary" id="previewImage">previewImage</button>
+        
+        <button class="btn btn_primary" id="login">Login</button>
+        <button class="btn btn_primary" id="register">Register</button>
+        
+        <button class="btn btn_primary" id="choseImage">choseImage 单选</button>
+        <button class="btn btn_primary" id="choseImages">choseImages 多选</button>
+        
+        <button class="btn btn_primary" id="uploadImage">uploadImage</button>
+        
+        <button class="btn btn_primary" id="getAppSettings">getAppSettings</button>
+        
+        
+        <img id="imgid" src="http://img3.douban.com/view/photo/photo/public/p2152134700.jpg"/>
+        
+        <script>
+            document.querySelector('#getLocation').onclick = function () {
+                wx.getLocation({
+                               success: function (res) {
+                               alert(res.address);
+                               },
+                               cancel: function (res) {
+                               alert(res.msg);
+                               }
+                               });
+            };
+        
+        // 5.2 图片预览
+        document.querySelector('#previewImage').onclick = function () {
+            wx.previewImage({
+                            current: 'http://img5.douban.com/view/photo/photo/public/p1353993776.jpg',
+                            urls: [
+                                   'http://img3.douban.com/view/photo/photo/public/p2152117150.jpg',
+                                   'http://img5.douban.com/view/photo/photo/public/p1353993776.jpg',
+                                   'http://img3.douban.com/view/photo/photo/public/p2152134700.jpg'
+                                   ]
+                            });
+        };
+        
+        var images = {
+            localId: [],
+            serverId: []
+        };
+        
+        // 5.3 上传图片
+        document.querySelector('#uploadImage').onclick = function () {
+            if (images.localId.length == 0) {
+                alert('请先使用 chooseImage 接口选择图片');
+                return;
+            }
+            var i = 0, length = images.localId.length;
+            images.serverId = [];
+            function upload() {
+                wx.uploadImage({
+                               localId: images.localId[i],
+                               isShowProgressTips: 1,
+                               success: function (res) {
+                               i++;
+                               alert('已上传：' + i + '/' + length + '/n' + res.serverId);
+                               images.serverId.push(res.serverId);
+                               if (i < length) {
+                               upload();
+                               }
+                               },
+                               fail: function (res) {
+                               alert(JSON.stringify(res));
+                               }
+                               });
+            }
+            upload();
+        };
+        
+        document.querySelector('#login').onclick = function () {
+            wx.login();
+        };
+        
+        document.querySelector('#register').onclick = function () {
+            wx.register();
+        };
+        
+        document.querySelector('#choseImage').onclick = function () {
+            wx.choseImage({
+                          success: function (res) {
+                          //alert(res.localIds[0]);
+                          document.getElementById('imgid').src= res.localIds[0];
+                          images.localId.push(res.localIds[0]);
+                          },
+                          cancel: function (res) {
+                          alert('没有选中图片1');
+                          }
+                          });
+        };
+        
+        document.querySelector('#choseImages').onclick = function () {
+            wx.choseImages({
+                           success: function (res) {
+                           //alert(JSON.stringify(res));
+                           },
+                           cancel: function (res) {
+                           alert('没有选中图片2');
+                           }
+                           });
+        };
+        
+        document.querySelector('#getAppSettings').onclick = function () {
+            wx.getAppSettings({
+                              success: function (res) {
+                              alert(res.theme_colors);
+                              },
+                              cancel: function (res) {
+                              alert('getAppSettings');
+                              }
+                              });
+        };
+        
+        
+            </script>
+        
+    </body>
+    
+</html>

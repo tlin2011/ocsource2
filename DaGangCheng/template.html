@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<meta charset="utf-8">
+<title>CH_NAME</title>
+<meta name="viewport" id="V" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes" >
+<link href="http://wap.huaxo.com/css/normalize.css" type="text/css" rel="stylesheet">
+<link href="http://wap.huaxo.com/css/d_style.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+	#download{width:95%; height:170px; position:fixed; margin:0px auto; display:none; z-index:99;}
+	.download_ico_t{position:absolute; top:15px; right:30px; z-index:2;}
+	#download .download_ct{width:100%; height:170px; position:absolute; left:0px; top:0px; z-index:3; color:#fff; text-align:center;}
+	#download .download_bg{width:100%; height:170px; background:#000; position:absolute; left:0px; top:0px; z-index:1; border-radius:10px; filter:alpha(opacity=90); -moz-opacity:0.9; -khtml-opacity: 0.9; opacity: 0.9;}
+	#download h2{font-weight:normal; padding:20px 20px 0px;}
+	#download .download_txt{padding:20px; font-size:14px;}
+	#download .download_txt span{color:#FFFF00;}
+	#download .close{text-align:center; margin-top:20px;}
+	#download .close a{display:inline-block; background:#fff; padding:5px 20px; font-size:16px; color:#3e3a39; text-align:center; border-radius:5px;}
+</style>
+<script type="text/javascript">
+function is_weixn(){
+//document.getElementById("download").style.display="block";
+//alert('sssssss');
+var ua = (""+window.navigator.userAgent).toLowerCase();
+//alert("ua:"+ua);
+if(ua.indexOf("micromessenger")>=0)
+ {
+	//return true;
+	//alert('sssssss');
+	document.getElementById("download").style.display="block";
+	document.getElementById("downipa").href="#";
+	document.getElementById("downapk").href="#";
+	//$('#download').show();
+	return false;
+} else {
+	return true;
+}
+}
+
+</script>
+</head>
+<body>
+	<section id="main">
+		<section id="download">
+			<section class="download_ico_t"><img src="download_ico_t.png"></section>
+			<section class="download_ct">
+				<h2>应用下载温馨提示</h2>
+				<section class="download_txt">
+					请点击右上角的”<span>图标</span>”，选择“<span>在浏览器中打开（安卓）</span>”或者“<span>Safari（苹果）</span>”中打开。<br>
+					<section class="close"><a href="#" onClick="document.getElementById('download').style.display='none';return false;">关闭窗口</a></section>
+				</section>
+			</section>
+			<section class="download_bg"></section>
+		</section>
+		<section class="list_links">您现在的位置：
+			<a href="http://i.buger.net/ibuger_service/ios/EN_NAME.html" title="Android安卓首页">首页</a>
+			<span>&gt;&gt;</span>
+			<a href="http://i.buger.net/ibuger_service/ios/EN_NAME.html" title="Android安卓软件">手机软件</a>
+			<span>&gt;&gt;</span>CH_NAME
+		</section>
+		<section class="app_info ">
+			<section class="icon clear">
+				<section class="fl"><img  src="http://i.buger.net/ibuger_service/comm/comm_img.jsp?id=LOGO&w=200&h=200"  alt="test"/></section>
+				<section class="txt fl">
+					<ul>
+						<li class="tit">CH_NAME</li>
+						<li>版本：VERSION</li>
+						<li>下载量：501</li>
+						<li><a class="btn" onclick="is_weixn()" id="downapk" style="padding-left:5px;padding-right:5px" href="http://i.buger.net/ibuger_service/comm/d.jsp?k=ibuger_EN_NAME" target="_blank">安卓版</a>
+						<a class="btn"  onClick="is_weixn()" style="padding-left:5px;padding-right:5px" id="downipa" href="itms-services://?action=download-manifest&url=https://ssl.huaxo.com/ios/EN_NAME.plist" target=_blank >苹果版</a></li>
+					</ul>
+				</section>
+			</section>
+			<section class="safe box clear">
+				<span class="fl">安全认证：</span>             
+				<a title="腾讯手机管家安全检测" target="_blank" href="#">腾讯手机管家安全检测</a>     
+            </section>			
+			<section class="detail box">
+				<h2 class="tit">“CH_NAME”简介</h2>
+				<p></p>
+			</section>
+			<section class='box code_mod'>
+				<h2 class="tit">扫描二维码下载</h2>
+				<section class='code'>
+				<div class="left">
+				<b>扫描下载</b><br/>
+					<img src="http://www.yunapi.org/api/qrcode.jsp?val=http://i.buger.net/ibuger_service/ios/EN_NAME.html" alt="扫描二维码下载"/>
+				</div>
+				<div class=clear></div>
+				</section>
+			</section>
+			<section class='box'>
+				<div class="bshare-custom">
+					<META name="description" content="">
+					分享：
+					<a title="分享到QQ空间" class="bshare-qzone"></a>
+					<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+					<a title="分享到人人网" class="bshare-renren"></a>
+					<a title="分享到腾讯微博" class="bshare-qqmb"></a>
+					<a title="分享到网易微博" class="bshare-neteasemb"></a>
+					<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+					<span class="BSHARE_COUNT bshare-share-count">0</span>
+				</div>
+				<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script>
+				<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+			</section>
+		</section>
+		<footer id='phone_footer'>
+			<p>Copyright 2013 http://www.huaxo.com/</p>
+			<p>All Rights Reserved</p>
+		</footer>
+	</section>
+	<script type="text/javascript">  
+          function browserRedirect()
+          {  
+        	  /*
+              var sUserAgent = navigator.userAgent.toLowerCase();  
+              var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";  
+              var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";  
+              var bIsMidp = sUserAgent.match(/midp/i) == "midp";  
+              var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";  
+              var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";  
+              var bIsAndroid = sUserAgent.match(/android/i) == "android";  
+              var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";  
+              var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";  
+              if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){  
+              //if(!(bIsCE || bIsWM))
+            	  */
+             if($.browser.msie)//ie浏览器跳转
+             {
+            	 window.location.href='http://wap.huaxo.com/d2.jsp?k=ibuger_dagangcheng';
+             } 
+          }  
+          browserRedirect();          
+	</script>
+<script type="text/javascript">
+function doLocation(url)
+{
+  var a = document.createElement("a");
+  //if(!a.click) 
+ {
+    window.location = url;
+    return;
+  }
+  a.setAttribute("href", url);
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+}
+function down(){
+doLocation('itms-services://?action=download-manifest&url=https://ssl.huaxo.com/ios/EN_NAME.plist');
+}
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbb8ec3267ad17d5e5ede4be8a152ca5a' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
